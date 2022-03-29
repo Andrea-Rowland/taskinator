@@ -95,8 +95,16 @@ var taskButtonHandler = function(event) {
     if(event.target.matches(".delete-btn")) {
         // get the element's task id
         var taskId = event.target.getAttribute("data-task-id");
+        deleteTask(taskId);
         console.log(taskId);
     }
+};
+
+var deleteTask = function(taskId) {
+    console.log(taskId);
+    //find task list element with taskI value and remove it
+    var taskSelected = document.querySelector(".task-item[data-task-id='" + taskId + "']")
+    taskSelected.remove();
 };
 
 // Create a new task
